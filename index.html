@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>COUNTER ELITI</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      *{
+        margin:0;
+        box-sizing: border-box;
+      }
+      .titulo{
+        background-color:blueviolet;
+        color:gold;
+        padding:20px;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+      }
+      .container {
+        display: flex;
+        justify-content: center; /* Horizontaly centering */
+        align-items: center; /* Centraliza verticalmente */
+        height: 20vh; /* Define a altura do contêiner para 100% da altura da viewport */
+        padding: 5px;
+      }
+      .texto{
+        background-color:blueviolet;
+        color:gold;
+        width:200px;
+        height: 100px;
+        padding:5px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 25px;
+        text-align: center;
+      }
+      .buttons{
+        display:flex;
+        margin-top: 5px;
+        width: 150px;
+        height: 50px;
+        font-size: 30px;
+        padding: 10px;
+        text-align: center;
+        gap:50px;
+        margin: 0 20px;
+      }
+      .tabela{
+        justify-content: center;
+        display:flex;
+        height: 50px; 
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1 class="titulo">COUNTER ELITI</h1>
+    <br><br>
+    <div class="container">
+      <p class="texto">Clique para aumentar ou reduzir o valor</p>
+    </div>
+    <table class="tabela">
+      <tr>
+        <td class="line">
+          <button  class="buttons">Aumentar</button>
+        </td>
+        <td class="line">
+          <button  class="buttons">Diminuir</button>
+        </td>
+      </tr>
+    </table>
+    <script>
+
+    </script>
+  </body>
+</html>
