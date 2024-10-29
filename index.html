@@ -4,61 +4,84 @@
     <title>COUNTER ELITI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-      *{
-        margin:0;
+      * {
+        margin: 0;
         box-sizing: border-box;
       }
-      .titulo{
-        background-color:blueviolet;
-        color:gold;
-        padding:20px;
+      .titulo {
+        background-color: blueviolet;
+        color: gold;
+        padding: 20px;
         font-family: Arial, Helvetica, sans-serif;
         text-align: center;
       }
       .container {
         display: flex;
-        justify-content: center; /* Horizontaly centering */
+        justify-content: center; /* Centraliza horizontalmente */
         align-items: center; /* Centraliza verticalmente */
-        height: 20vh; /* Define a altura do contêiner para 100% da altura da viewport */
+        height: 20vh; /* Define a altura do contêiner para 20% da altura da viewport */
         padding: 5px;
       }
-      .texto{
-        background-color:blueviolet;
-        color:gold;
-        width:900px;
+      .texto {
+        background-color: blueviolet;
+        color: gold;
+        width: 90%;
+        max-width: 900px;
         height: 80px;
-        padding:5px;
+        padding: 5px;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 50px;
+        font-size: 8vw;
         text-align: center;
         border-radius: 10px;
       }
-      .buttons{
-        display:flex;
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin-top: 5px;
         width: 150px;
         height: 50px;
-        font-size: 30px;
+        font-size: 8vw;
         padding: 10px;
         text-align: center;
-        gap:50px;
+        gap: 50px;
         margin: 0 20px;
+        background-color: blueviolet;
+        color: gold;
+        border: 2px solid gold;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
       }
-      .tabela{
+      .buttons:active {
+        background-color: violet;
+      }
+      .tabela {
         justify-content: center;
-        display:flex;
-        height: 50px; 
+        display: flex;
+        height: 50px;
       }
-      .num{
+      .num {
         text-align: center;
         padding: 10px;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 150px;
+        font-size: 15vw;
       }
-      .reset-container{
-        display:flex;
+      .reset-container {
+        display: flex;
         justify-content: center;
-        margin-top:20px;
+        margin-top: 20px;
+      }
+      @media (min-width: 600px) {
+        .texto {
+          font-size: 50px;
+        }
+        .buttons {
+          font-size: 30px;
+        }
+        .num {
+          font-size: 150px;
+        }
       }
     </style>
   </head>
@@ -72,10 +95,10 @@
     <table class="tabela">
       <tr>
         <td class="line">
-          <button  class="buttons" onclick="aumetarValor()">Aumentar</button>
+          <button class="buttons" onclick="aumetarValor()">Aumentar</button>
         </td>
         <td class="line">
-          <button  class="buttons" onclick="reduzirValor()">Diminuir</button>
+          <button class="buttons" onclick="reduzirValor()">Diminuir</button>
         </td>
       </tr>
       <tr class="reset-container">
@@ -86,15 +109,15 @@
     </table>
     <script>
       let counter = 0;
-      function aumetarValor(){
+      function aumetarValor() {
         counter++;
         document.getElementById('counter').innerText = counter;
       }
-      function reduzirValor(){
+      function reduzirValor() {
         counter--;
         document.getElementById('counter').innerText = counter;
       }
-      function resetarValor(){
+      function resetarValor() {
         counter = 0;
         document.getElementById('counter').innerText = counter;
       }
