@@ -25,12 +25,13 @@
       .texto{
         background-color:blueviolet;
         color:gold;
-        width:200px;
-        height: 100px;
+        width:900px;
+        height: 80px;
         padding:5px;
         font-family: Arial, Helvetica, sans-serif;
-        font-size: 25px;
+        font-size: 50px;
         text-align: center;
+        border-radius: 10px;
       }
       .buttons{
         display:flex;
@@ -48,7 +49,17 @@
         display:flex;
         height: 50px; 
       }
-
+      .num{
+        text-align: center;
+        padding: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 150px;
+      }
+      .reset-container{
+        display:flex;
+        justify-content: center;
+        margin-top:20px;
+      }
     </style>
   </head>
   <body>
@@ -57,18 +68,36 @@
     <div class="container">
       <p class="texto">Clique para aumentar ou reduzir o valor</p>
     </div>
+    <h2 class="num" id="counter">0</h2>
     <table class="tabela">
       <tr>
         <td class="line">
-          <button  class="buttons">Aumentar</button>
+          <button  class="buttons" onclick="aumetarValor()">Aumentar</button>
         </td>
         <td class="line">
-          <button  class="buttons">Diminuir</button>
+          <button  class="buttons" onclick="reduzirValor()">Diminuir</button>
+        </td>
+      </tr>
+      <tr class="reset-container">
+        <td>
+          <button class="buttons" onclick="resetarValor()">Resetar</button>
         </td>
       </tr>
     </table>
     <script>
-
+      let counter = 0;
+      function aumetarValor(){
+        counter++;
+        document.getElementById('counter').innerText = counter;
+      }
+      function reduzirValor(){
+        counter--;
+        document.getElementById('counter').innerText = counter;
+      }
+      function resetarValor(){
+        counter = 0;
+        document.getElementById('counter').innerText = counter;
+      }
     </script>
   </body>
 </html>
