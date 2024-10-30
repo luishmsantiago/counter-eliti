@@ -86,7 +86,7 @@
     </style>
   </head>
   <body>
-    <h1 class="titulo">COUNTER ELITI</h1>
+    <h1 class="titulo" id="header">COUNTER ELITI</h1>
     <br><br>
     <div class="container">
       <p class="texto">Clique para aumentar ou reduzir o valor</p>
@@ -108,6 +108,7 @@
       </tr>
     </table>
     <script>
+      var headerUpdate = document.getElementById('header').innerText
       let counter = 0;
       function aumetarValor() {
         counter++;
@@ -121,6 +122,10 @@
         counter = 0;
         document.getElementById('counter').innerText = counter;
       }
+      function updateHeader(){
+        document.getElementById('header').textContent = headerUpdate + '  ' + counter;
+      }
+      updateHeader();
     </script>
   </body>
 </html>
