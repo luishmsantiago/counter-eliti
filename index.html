@@ -72,6 +72,18 @@
         justify-content: center;
         margin-top: 20px;
       }
+      .counters {
+        display: flex;
+        justify-content: space-around;
+      }
+      .headers{
+        display: flex;
+        justify-content: space-around;
+      }
+      .counter-container {
+        margin: 10px;
+      }
+
       @media (min-width: 600px) {
         .texto {
           font-size: 50px;
@@ -86,46 +98,110 @@
     </style>
   </head>
   <body>
-    <h1 class="titulo" id="header">COUNTER ELITI</h1>
+    <div class="headers">
+      <h1 class="titulo" id="header1">COUNTER ELITI</h1>
+      <h1 class="titulo" id="header2">COUNTER ELITI</h1>
+    </div>
     <br><br>
     <div class="container">
       <p class="texto">Clique para aumentar ou reduzir o valor</p>
     </div>
-    <h2 class="num" id="counter">0</h2>
-    <table class="tabela">
-      <tr>
-        <td class="line">
-          <button class="buttons" onclick="aumetarValor()">Aumentar</button>
-        </td>
-        <td class="line">
-          <button class="buttons" onclick="reduzirValor()">Diminuir</button>
-        </td>
-      </tr>
-      <tr class="reset-container">
-        <td>
-          <button class="buttons" onclick="resetarValor()">Resetar</button>
-        </td>
-      </tr>
-    </table>
+    <div class="counters">
+      <div class="counter-container">
+        <h2 class="num" id="counter1">0</h2>
+        <table class="tabela">
+          <tr>
+            <td class="line">
+              <button class="buttons" onclick="aumetarValor1()">Aumentar</button>
+            </td>
+            <td class="line">
+              <button class="buttons" onclick="reduzirValor1()">Diminuir</button>
+            </td>
+          </tr>
+          <tr class="reset-container">
+            <td>
+              <button class="buttons" onclick="resetarValor1()">Resetar</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <div class="counter-container">
+        <h2 class="num" id="counter2">0</h2>
+        <table class="tabela">
+          <tr>
+            <td class="line">
+              <button class="buttons" onclick="aumetarValor2()">Aumentar</button>
+            </td>
+            <td class="line">
+              <button class="buttons" onclick="reduzirValor2()">Diminuir</button>
+            </td>
+          </tr>
+          <tr class="reset-container">
+            <td>
+              <button class="buttons" onclick="resetarValor2()">Resetar</button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>    
     <script>
-      var headerUpdate = document.getElementById('header').innerText
-      let counter = 0;
-      function aumetarValor() {
-        counter++;
-        document.getElementById('counter').innerText = counter;
+    var headerUpdate1 = document.getElementById('header1').innerText
+    var headerUpdate2 = document.getElementById('header2').innerText
+    let counter1 = parseInt(localStorage.getItem('counter1')) || 0;
+    let counter2 = parseInt(localStorage.getItem('counter2')) || 0;
+    document.getElementById('counter1').innerText = counter1;
+    document.getElementById('counter2').innerText = counter2;
+
+    function aumetarValor1() {
+      counter1++;
+      document.getElementById('counter1').innerText = counter1;
+      localStorage.setItem('counter1', counter1);
+      updateHeader1();
+    }
+
+    function reduzirValor1() {
+      counter1--;
+      document.getElementById('counter1').innerText = counter1;
+      localStorage.setItem('counter1', counter1);
+      updateHeader1()
+    }
+
+    function resetarValor1() {
+      counter1 = 0;
+      document.getElementById('counter1').innerText = counter1;
+      localStorage.setItem('counter1', counter1);
+      updateHeader1()
+    }
+
+    function aumetarValor2() {
+      counter2++;
+      document.getElementById('counter2').innerText = counter2;
+      localStorage.setItem('counter2', counter2);
+      updateHeader2()
+    }
+
+    function reduzirValor2() {
+      counter2--;
+      document.getElementById('counter2').innerText = counter2;
+      localStorage.setItem('counter2', counter2);
+      updateHeader2()
+    }
+
+    function resetarValor2() {
+      counter2 = 0;
+      document.getElementById('counter2').innerText = counter2;
+      localStorage.setItem('counter2', counter2);
+      updateHeader2()
+    }
+
+      function updateHeader1(){
+        document.getElementById('header1').textContent = headerUpdate1 + '  ' + counter1;
       }
-      function reduzirValor() {
-        counter--;
-        document.getElementById('counter').innerText = counter;
+      function updateHeader2(){
+        document.getElementById('header2').textContent = headerUpdate2 + '  ' + counter2;
       }
-      function resetarValor() {
-        counter = 0;
-        document.getElementById('counter').innerText = counter;
-      }
-      function updateHeader(){
-        document.getElementById('header').textContent = headerUpdate + '  ' + counter;
-      }
-      updateHeader();
+      updateHeader1();
+      updateHeader2();
     </script>
   </body>
 </html>
