@@ -20,7 +20,8 @@ Para acessar o script HTML, CSS e JavaScript, acesse o arquivo index.html.
 
 ## Uso
 
-O contador possui os botões: aumentar, reduzir e resetar. O botão aumentar aumenta em +1 o valor que está sendo indicado, o botão reduzir diminui em -1 o valor indicado e o botão resetar retorna o valor indicado a 0.
+O contador possui os botões: aumentar, reduzir e resetar. O botão aumentar aumenta em +1 o valor que está sendo indicado, o botão reduzir diminui em -1 o valor indicado e o botão resetar retorna o valor indicado a 0. \
+O valor aumentará no cabeçalho ao mesmo tempo.
 
 ![Contador Eliti](https://github.com/luishmsantiago/counter-eliti/blob/main/counter-eliti.png)
 
