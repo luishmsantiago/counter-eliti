@@ -12,7 +12,8 @@ O exercício teve como objetivo a criação de um contador para prática de lóg
 
 ## Instalação
 
-Baixar o arquivo "index.html" e abrí-lo em seu navegador.
+Link para acesso: https://counter-eliti.vercel.app/ \
+Baixar o arquivo "index.html" e abrí-lo em seu navegador. O projeto receberá novas atualizações.
 
 ### SCRIPT
 
